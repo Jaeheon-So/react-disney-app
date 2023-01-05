@@ -17,7 +17,8 @@ const DetailPage = () => {
         setMovie({});
       }
     }
-    document.querySelector("input").value = location.state.q;
+    if (document.querySelector("input"))
+      document.querySelector("input").value = location.state?.q || "";
     fetchData();
   }, [movieId, location]);
 
